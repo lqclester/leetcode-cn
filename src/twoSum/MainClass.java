@@ -6,17 +6,17 @@ import java.util.HashMap;
 class Solution {
 
   public int[] twoSum(int[] nums, int target) {
+    HashMap<Integer, Integer[]> map = new HashMap<>(nums.length);
     int[] result = new int[2];
-    HashMap<Integer, HashMap<String, Integer>> map = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
-
-      if (map.get(nums[i]) == null) {
-        HashMap<String, Integer> tmp = new HashMap<>();
-        tmp.put("index", i);
-        tmp.put("val", nums[i]);
+      Integer[] mapGet = map.get(nums[i]);
+      if (mapGet == null) {
+        Integer[] tmp = new Integer[2];
+        tmp[0] = i; //下标
+        tmp[1] = nums[i];//值
         map.put(target - nums[i], tmp);
       } else {
-        result[0] = map.get(nums[i]).get("index");
+        result[0] = mapGet[0];
         result[1] = i;
         break;
       }
