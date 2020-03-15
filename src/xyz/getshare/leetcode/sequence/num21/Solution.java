@@ -1,10 +1,6 @@
-package mergeTwoLists;
+package xyz.getshare.leetcode.sequence.num21;
 
-import model.ListNode;
-
-import java.io.IOException;
-
-import static model.Tools.*;
+import xyz.getshare.leetcode.model.ListNode;
 
 /**
  * 模仿老师小学帮新学生们插入队伍，那种基本是最快的了。以 @param:l1 作为站好的队列。
@@ -34,20 +30,5 @@ class Solution {
             p2 = l2;
         } while (p2 != null);
         return start;
-    }
-}
-
-public class MainClass {
-
-
-    public static void main(String[] args) throws IOException {
-        ListNode l1 = stringToListNode("[-6,-3,-2,2,3]");
-        ListNode l2 = stringToListNode("[-10,-8,-6,-5,1,6,7]");
-        //[-10,-8,-6,-6,-5,-3,-2,1,2,3,6,7]
-        ListNode ret = new Solution().mergeTwoLists(l1, l2);
-
-        String out = listNodeToString(ret);
-
-        System.out.println(out);
     }
 }

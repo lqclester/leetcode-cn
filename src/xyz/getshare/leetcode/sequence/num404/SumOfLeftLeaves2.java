@@ -1,6 +1,6 @@
-package sumOfLeftLeaves;
+package xyz.getshare.leetcode.sequence.num404;
 
-import model.TreeNode;
+import xyz.getshare.leetcode.model.TreeNode;
 
 /**
  * @author lqclester

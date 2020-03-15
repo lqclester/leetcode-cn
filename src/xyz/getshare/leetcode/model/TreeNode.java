@@ -1,4 +1,4 @@
-package model;
+package xyz.getshare.leetcode.model;
 
 /**
  * @author lqclester

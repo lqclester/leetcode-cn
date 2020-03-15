@@ -1,7 +1,8 @@
-package sumOfLeftLeaves;
+package xyz.getshare.leetcode.sequence.num404;
+
+import xyz.getshare.leetcode.model.TreeNode;
 
 import java.util.Stack;
-import model.TreeNode;
 
 public class SumOfLeftLeaves {
 

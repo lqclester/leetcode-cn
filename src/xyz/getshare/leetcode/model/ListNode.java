@@ -1,4 +1,4 @@
-package model;
+package xyz.getshare.leetcode.model;
 
 public class ListNode {
     public int val;

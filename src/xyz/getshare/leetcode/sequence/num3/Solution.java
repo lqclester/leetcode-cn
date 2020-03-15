@@ -1,10 +1,6 @@
-package stringToString;
+package xyz.getshare.leetcode.sequence.num3;
 
-
-import com.sun.javafx.scene.control.skin.VirtualFlow;
-
-import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
 
 /**
  * @author lqclester
@@ -29,20 +25,5 @@ class Solution {
             if (max < length) max = length; //保存当前最大长度
         }
         return max;
-    }
-}
-
-public class MainClass {
-
-    public static void main(String[] args) throws IOException {
-        int ret;
-        ret = new Solution().lengthOfLongestSubstring("dvdstyussssssasdasdsadqwertyiopff");
-        System.out.println(ret);
-        ret = new Solution().lengthOfLongestSubstring("aab");
-        System.out.println(ret);
-        ret = new Solution().lengthOfLongestSubstring("dvdf");
-        System.out.println(ret);
-        ret = new Solution().lengthOfLongestSubstring("au");
-        System.out.println(ret);
     }
 }
