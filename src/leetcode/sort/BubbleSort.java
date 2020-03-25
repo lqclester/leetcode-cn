@@ -1,4 +1,4 @@
-package leetcode.base.sort;
+package leetcode.sort;
 
 /**
  * @author lqclester

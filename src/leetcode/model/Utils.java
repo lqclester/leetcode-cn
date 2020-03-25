@@ -2,12 +2,34 @@ package leetcode.model;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.regex.Pattern;
 
 /**
  * @author lqclester
  */
 public class Utils {
 
+
+    public static int[][] toArrays(String arrayStr) {
+        if (arrayStr == null || arrayStr.length() <= 4) {
+            return new int[][]{};
+        } else {
+            //],
+            String[] elements = arrayStr.substring(1, arrayStr.length() -2).split("],");
+            int[][] result = new int[elements.length][];
+            for (int i = 0; i < result.length; i++) {
+                String[] element = elements[i].substring(1).split(",");
+                result[i] = new int[element.length];
+                for (int j = 0; j < element.length; j++) {
+                    if (element[j].length() <= 0) {
+                        continue;
+                    }
+                    result[i][j] = Integer.parseInt(element[j]);
+                }
+            }
+            return result;
+        }
+    }
 
     public static ListNode stringToListNode(String input) {
         // Generate array from the input
@@ -69,7 +91,6 @@ public class Utils {
     public static String integerArrayToString(int[] nums) {
         return integerArrayToString(nums, nums.length);
     }
-
 
 
     public static TreeNode stringToTreeNode(String input) {
