@@ -1,4 +1,4 @@
-package leetcode.bytedance.num2;
+package leetcode.bytedance.string.num2;
 
 /**
  * @author lqclester

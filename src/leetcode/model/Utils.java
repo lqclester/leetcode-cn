@@ -1,21 +1,41 @@
 package leetcode.model;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.regex.Pattern;
 
 /**
  * @author lqclester
  */
 public class Utils {
 
+    public static char[][] toCharCharArray(String arrayStr) {
+        if (arrayStr == null || arrayStr.length() <= 4) {
+            return new char[][]{};
+        } else {
+            //],
+            String[] elements = arrayStr.substring(1, arrayStr.length() - 2).split("],");
+            char[][] result = new char[elements.length][];
+            for (int i = 0; i < result.length; i++) {
+                String[] element = elements[i].substring(1).split(",");
+                result[i] = new char[element.length];
+                for (int j = 0; j < element.length; j++) {
+                    if (element[j].length() <= 0) {
+                        continue;
+                    }
+                    result[i][j] = element[j].charAt(1);
+                }
+            }
+            return result;
+        }
+    }
 
-    public static int[][] toArrays(String arrayStr) {
+    public static int[][] toIntIntArray(String arrayStr) {
         if (arrayStr == null || arrayStr.length() <= 4) {
             return new int[][]{};
         } else {
             //],
-            String[] elements = arrayStr.substring(1, arrayStr.length() -2).split("],");
+            String[] elements = arrayStr.substring(1, arrayStr.length() - 2).split("],");
             int[][] result = new int[elements.length][];
             for (int i = 0; i < result.length; i++) {
                 String[] element = elements[i].substring(1).split(",");
@@ -137,4 +157,37 @@ public class Utils {
         return root;
     }
 
+    public static String[] toStrArray(String arrayStr) {
+        if (arrayStr == null || arrayStr.length() <= 2) {
+            return new String[]{};
+        }
+        String[] arrays = arrayStr.substring(1, arrayStr.length() - 2).split(",");
+        return Arrays.stream(arrays).map(str -> {
+            str = str.trim();
+            return str.replaceAll("\"", "");
+        }).toArray(String[]::new);
+    }
+
+    public static int[] toIntegerArray(String arrayStr) {
+        if (arrayStr == null || arrayStr.length() <= 2) {
+            return new int[]{};
+        }
+        String[] arrays = arrayStr.substring(1, arrayStr.length() - 1).split(",");
+        Integer[] integers = Arrays.stream(arrays).map(str -> {
+            str = str.trim();
+            str = str.replaceAll("\"", "");
+            return str;
+        }).filter(str -> str.length() > 0).map(str -> {
+            if (str.contains("-")) {
+                return Integer.parseInt(str.replaceAll("-", "")) * -1;
+            } else {
+                return Integer.parseInt(str);
+            }
+        }).toArray(Integer[]::new);
+        int[] result = new int[integers.length];
+        for (int i = 0; i < integers.length; i++) {
+            result[i] = integers[i];
+        }
+        return result;
+    }
 }

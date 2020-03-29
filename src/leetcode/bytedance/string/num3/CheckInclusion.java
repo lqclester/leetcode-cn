@@ -1,4 +1,4 @@
-package leetcode.bytedance.num3;
+package leetcode.bytedance.string.num3;
 
 /**
  * @author lqclester
@@ -21,10 +21,10 @@ package leetcode.bytedance.num3;
  */
 public class CheckInclusion {
     public static void main(String[] args) {
-/*        System.out.println(new Solution().checkInclusion("acccb", "eidbcccaooo"));
+        System.out.println(new Solution().checkInclusion("acccb", "eidbcccaooo"));
         System.out.println(new Solution().checkInclusion("accb", "eidbcccaooo"));
         System.out.println(new Solution().checkInclusion("adc", "dcda"));
-        System.out.println(new Solution().checkInclusion("abc", "bbbca"));*/
+        System.out.println(new Solution().checkInclusion("abc", "bbbca"));
         System.out.println(new Solution().checkInclusion("abc", "ccccccbbbbbbaaaa"));
 
     }

@@ -13,11 +13,11 @@ import leetcode.model.Utils;
  */
 public class SurfaceArea {
     public static void main(String[] args) {
-        int[][] array1 = Utils.toArrays("[[2]]"); //10
-        int[][] array2 = Utils.toArrays("[[1,2],[3,4]]");//34
-        int[][] array3 = Utils.toArrays("[[1,0],[0,2]]"); //16
-        int[][] array4 = Utils.toArrays("[[1,1,1],[1,0,1],[1,1,1]]");//32
-        int[][] array5 = Utils.toArrays("[[2,2,2],[2,1,2],[2,2,2]]");//46
+        int[][] array1 = Utils.toIntIntArray("[[2]]"); //10
+        int[][] array2 = Utils.toIntIntArray("[[1,2],[3,4]]");//34
+        int[][] array3 = Utils.toIntIntArray("[[1,0],[0,2]]"); //16
+        int[][] array4 = Utils.toIntIntArray("[[1,1,1],[1,0,1],[1,1,1]]");//32
+        int[][] array5 = Utils.toIntIntArray("[[2,2,2],[2,1,2],[2,2,2]]");//46
         System.out.println(new Solution().surfaceArea(array1));
         System.out.println(new Solution().surfaceArea(array2));
         System.out.println(new Solution().surfaceArea(array3));

@@ -1,4 +1,4 @@
-package leetcode.bytedance.num3;
+package leetcode.bytedance.string.num3;
 
 import java.util.HashSet;
 import java.util.Set;
