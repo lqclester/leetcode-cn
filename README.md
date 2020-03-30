@@ -6,6 +6,8 @@
 - `model`： 用到要申明的数据结构、工具类都放在这里
 - `sequence`： 按顺序做题的记录
 
+## 经验
+- 测试数据库n<10^5 , O(n^2)就要几秒
 
 ## 相关资料链接
 - [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)
