@@ -3,7 +3,7 @@ package leetcode.base.quickSort;
 /**
  * @author lqclester
  */
-class Solution2 {
+class Solution3 {
     public void quickSort(Integer[] arr, int startIndex, int endIndex) {
 
         // 递归结束条件：startIndex大等于endIndex的时候
@@ -25,24 +25,30 @@ class Solution2 {
         int pivot = array[startIndex];
         int left = startIndex;
         int right = endIndex;
-
-        while (left != right) {
-            while (left < right && array[right] > pivot) {
-                right--;//找到第一个小于pivot的数
+        int index = startIndex; //开始时左坑，找到右边的填进去；index = right 坑变成左边...
+        while (left <= right) {
+            //right指针从右向左进行比较
+            while (right >= left) {
+                if (array[right] < pivot) {
+                    array[left] = array[right];
+                    index = right;
+                    left++;
+                    break;
+                }
+                right--;
             }
-            while (left < right && array[left] <= pivot) {
+            while (right >= left) {
+                if (array[left] > pivot) {
+                    array[right] = array[left];
+                    index = left;
+                    right--;
+                    break;
+                }
                 left++;
             }
-            if (left < right) {
-                int temp = array[left];
-                array[left] = array[right];
-                array[right] = temp;
-            }
+            array[index] = pivot;
+
         }
-        //pivot和指针重合点交换
-        int temp = array[left]; // while(array{left] <= pivot
-        array[left] = array[startIndex];
-        array[startIndex] = temp;
-        return left;
+        return index;
     }
 }

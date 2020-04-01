@@ -190,4 +190,24 @@ public class Utils {
         }
         return result;
     }
+
+
+    public static <T> void printArray(T[] t) {
+        for (int i = 0; i < t.length; i++) {
+            if (i != t.length - 1) {
+                System.out.print(t[i].toString() + ",");
+            } else {
+                System.out.println(t[i].toString());
+            }
+        }
+    }
+    public static void printIntArray(int[] t) {
+        for (int i = 0; i < t.length; i++) {
+            if (i != t.length - 1) {
+                System.out.print(t[i] + ",");
+            } else {
+                System.out.println(t[i]);
+            }
+        }
+    }
 }
