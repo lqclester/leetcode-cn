@@ -201,12 +201,22 @@ public class Utils {
             }
         }
     }
+
+    public static void printIntArrayArray(int[][] t) {
+        System.out.println("[");
+        for (int i = 0; i < t.length; i++) {
+            System.out.print("  ");
+            printIntArray(t[i]);
+        }
+        System.out.println("]");
+    }
     public static void printIntArray(int[] t) {
+        System.out.print("[");
         for (int i = 0; i < t.length; i++) {
             if (i != t.length - 1) {
                 System.out.print(t[i] + ",");
             } else {
-                System.out.println(t[i]);
+                System.out.println(t[i] + "]");
             }
         }
     }
